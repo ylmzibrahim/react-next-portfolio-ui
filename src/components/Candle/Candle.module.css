@@ -1,0 +1,127 @@
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i');
+
+.holder {
+  @apply relative m-[12rem_auto_0] w-[10em] h-[25em];
+}
+
+.holder *, .holder *:before, .holder *:after {
+  @apply absolute content-[''];
+}
+
+.candle {
+  @apply bottom-0 w-[10em] h-[20em] rounded-[10em/2.5em] shadow-[inset_1em_-2em_3em_0_rgba(0,0,0,0.4),inset_-1em_0_3em_0_rgba(0,0,0,0.4)] bg-[#190f02] bg-[linear-gradient(#e48825,#e78e0e,#833c03,#4c1a03,#1c0900)];
+}
+
+.candle:before {
+  @apply w-full h-[2.5em] rounded-[50%] border-2 border-[#d47401] bg-[#b86409] bg-[radial-gradient(#eaa121,#8e4901_45%,#b86409_80%)];
+}
+
+.candle:after {
+  @apply w-[2.125em] h-[.625em] left-1/2 -translate-x-1/2 rounded-[50%] top-[.875em] shadow-[0_0_1em_0_rgba(0,0,0,0.5)] bg-[radial-gradient(rgba(0,0,0,0.6),transparent_45%)];
+}
+
+.thread {
+  @apply w-[.375em] h-[2.25em] top-[-1em] left-1/2 z-10 rounded-tr-[40%] rounded-bl-none -translate-x-1/2 bg-[#121212] bg-[linear-gradient(#d6994a,#4b232c,#121212,black,#e8bb31_90%)];
+}
+
+.flame {
+  @apply w-[1.5em] h-[7.5em] left-1/2 origin-[50%_100%] -translate-x-1/2 bottom-full rounded-t-[50%] rounded-b-[20%] animate-[moveFlame_6s_linear_infinite,enlargeFlame_5s_linear_infinite] bg-[linear-gradient(white_80%,transparent)] cursor-pointer;
+}
+
+.flame:before {
+  @apply w-full h-full rounded-t-[50%] rounded-b-[20%] shadow-[0_0_1em_0_rgba(247,93,0,.4),0_-.375em_.25em_0_rgba(247,128,0,.7)];
+}
+
+.smokeXL {
+  @apply w-[2em] h-[7em] left-1/2 origin-[50%_100%] -translate-x-1/2 bottom-full rounded-t-[50%] rounded-b-[20%] animate-[moveSmoke_6s_linear,smokeXL_6s_linear] bg-[linear-gradient(#848884_80%,transparent)] cursor-pointer;
+}
+
+.smokeLG {
+  @apply w-[2em] h-[1em] left-1/2 origin-[50%_100%] -translate-x-1/2 bottom-full rounded-t-[50%] rounded-b-[20%] animate-[moveSmoke_6s_linear,smokeLG_6s_linear] bg-[linear-gradient(#848884_80%,transparent)] cursor-pointer opacity-0;
+}
+
+.smokeMD {
+  @apply w-[2em] h-[7em] left-1/2 origin-[50%_100%] -translate-x-1/2 bottom-full rounded-t-[50%] rounded-b-[20%] animate-[moveSmoke_6s_linear,smokeMD_6s_linear] bg-[linear-gradient(#848884_80%,transparent)] cursor-pointer;
+}
+
+
+.smokeXL:after, .smokeLG:after, .smokeMD:after {
+  @apply w-full h-full rounded-t-[50%] rounded-b-[20%] shadow-[0_0_1em_0_rgba(120,180,120,.4),0_-.375em_.25em_0_rgba(120,120,120,.7)];
+}
+
+@keyframes moveFlame {
+  0%, 100% {
+    transform: translateX(-50%) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(2deg);
+  }
+}
+
+@keyframes enlargeFlame {
+  0%, 100% {
+    @apply h-[7em]
+  }
+  50% {
+    @apply h-[8em]
+  }
+}
+
+@keyframes smokeXL {
+  0% {
+    @apply h-[2em] blur-sm
+  }
+  100% {
+    @apply w-[10em] h-[6em] rounded-full opacity-0 mb-[9em] blur-lg
+  }
+}
+
+@keyframes smokeLG {
+  29% {
+    @apply opacity-0
+  } 
+  30% {
+    @apply h-[2em] blur-sm opacity-100
+  }
+  75%, 100% {
+    @apply w-[4em] h-[5em] rounded-full opacity-0 mb-[4em] -ml-[1em] blur-lg
+  }
+}
+
+@keyframes smokeMD {
+  0% {
+    @apply h-[1em] blur-sm
+  }
+  100% {
+    @apply w-[2em] h-[2em] rounded-full opacity-0 mb-[18em] ml-[3em] blur-lg
+  }
+}
+
+@keyframes moveSmoke {
+  0%, 100% {
+    transform: translateX(-50%) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(15deg);
+  }
+}
+
+.glow {
+  @apply w-[1.625em] h-[3.75em] rounded-t-[50%] rounded-b-[35%] left-1/2 top-[-3em] -translate-x-1/2 bg-[rgba(0,133,255,.7)] shadow-[0_-2.5em_2em_0_#dc8a0c,0_2.5em_3em_0_#dc8a0c,inset_.25em_0_rgba(0,133,255,.6),inset_-.25em_0_rgba(0,133,255,.6)];
+}
+
+.glow:before {
+  @apply w-[70%] h-[60%] left-1/2 -translate-x-1/2 bottom-0 rounded-[50%] bg-[rgba(0,0,0,0.35)];
+}
+
+.blinking_glow {
+  @apply w-[6em] h-[11em] left-1/2 top-[-55%] -translate-x-1/2 rounded-[50%] bg-[#ff6000] blur-[4em] animate-[blinkIt_.1s_infinite];
+}
+
+@keyframes blinkIt {
+  50% { 
+    @apply opacity-[.8];
+  }
+}
+
