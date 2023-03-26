@@ -1,0 +1,17 @@
+{
+    // "extends": ["react-app"]
+    "extends": [
+      "react-app",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "prettier"
+      ],
+      "plugins": ["prettier"],
+      "rules": {
+        "react/react-in-jsx-scope": "off",
+        "prettier/prettier": "warn",
+        "no-unused-vars": "warn",
+        "no-console": ["warn", { "allow": ["info", "warn", "error"] }]
+      }
+    
+}
