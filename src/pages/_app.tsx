@@ -1,12 +1,12 @@
 import '../assets/styles/globals.css'
 import React from 'react'
 import { Provider } from 'react-redux'
-import { useRouter } from 'next/router'
 import { Layout } from '../components/Layout/Layout'
 import { store } from '../store'
 import { appWithTranslation } from 'next-i18next'
 import { ThemeProvider } from 'next-themes'
 import { NextPage } from 'next'
+import { useRouter } from 'next/router'
 
 interface Props {
   Component: NextPage
@@ -15,8 +15,7 @@ interface Props {
 
 function MyApp({ Component, pageProps }: Props) {
   const router = useRouter()
-  console.log(router)
-  if (typeof window !== 'undefined' && router.pathname !== '/home') router.push('/home')
+  if (typeof window !== 'undefined' && router.pathname === '/') router.push('/home')
 
   return (
     <Provider store={store}>

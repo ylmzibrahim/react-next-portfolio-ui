@@ -1,74 +1,59 @@
-import React from 'react'
-import { useEffect } from 'react'
-import styles from '../../assets/styles/Navbar.module.css'
+import React, { useEffect, useMemo, useState } from 'react'
+import styles from './Navbar.module.css'
 import Link from 'next/link'
-import { useSelector, useDispatch } from 'react-redux'
-import { actions, selectors } from '../../store'
 import { useTranslation } from 'next-i18next'
-import { MoonIcon, SunIcon } from '@heroicons/react/solid'
-import { useTheme } from 'next-themes'
+import { ThemeMode } from './ThemeMode/ThemeMode'
+import { Language } from './Language/Language'
+import { NavbarLinkProps } from './Navbar.types'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
+import { MainLogo } from './MainLogo/MainLogo'
+import { MenuIcon } from '@heroicons/react/solid'
 
 const Navbar = () => {
   const { t } = useTranslation()
-  const { systemTheme, theme, setTheme } = useTheme()
-  const currentTheme = theme === 'system' ? systemTheme : theme
-
-  const dispatch = useDispatch()
-  const user = useSelector(selectors.getUser)
-  const language = useSelector(selectors.getLanguage)
-  const themeState = useSelector(selectors.getTheme)
   const router = useRouter()
+  const [activeLink, setActiveLink] = useState<number>(0)
+
+  const links: NavbarLinkProps[] = useMemo(
+    () => [
+      { key: 0, title: t('navbar.links.home'), link: '/' },
+      { key: 1, title: t('navbar.links.projects'), link: '/projects' },
+      { key: 2, title: t('navbar.links.cv'), link: '/cv' },
+      { key: 3, title: t('navbar.links.contact'), link: '/contact' }
+    ],
+    [t]
+  )
 
   useEffect(() => {
-    dispatch(actions.setLanguage(router.locale))
-    dispatch(actions.setTheme(currentTheme))
-  })
+    const activeKey = links.find((link) => link.link === router.route || (link.link !== '/' && router.route.includes(link.link)))?.key ?? 0
+    setActiveLink(activeKey)
+  }, [links, router.route])
 
-  const handleChangeLanguage = () => {
-    if (language === 'en-US') {
-      router.replace(router.asPath, router.asPath, { locale: 'tr-TR' })
-      dispatch(actions.setLanguage('tr-TR'))
-    } else {
-      router.replace(router.asPath, router.asPath, { locale: 'en-US' })
-      dispatch(actions.setLanguage('en-US'))
-    }
-  }
+  const navbarLinks = links.map((link) => (
+    <div key={link.key}>
+      <div className={`${styles.linkLine} ${link.key === activeLink ? styles.activeLinkLine : ''}`} />
+      <Link href={link.link} onClick={() => changeActiveLink(link.key)}>
+        {link.title}
+      </Link>
+    </div>
+  ))
 
-  const handleChangeTheme = () => {
-    if (themeState === 'light') {
-      setTheme('dark')
-      dispatch(actions.setTheme('dark'))
-    } else {
-      setTheme('light')
-      dispatch(actions.setTheme('light'))
-    }
+  const changeActiveLink = (key: number): void => {
+    setActiveLink(key)
   }
 
   return (
-    <div className={styles.navbar}>
-      <div className={styles.links}>
-        <Link href='/'>{t('Home')}</Link>
-        {user.username !== undefined && <Link href={`/user/${user.username}`}>{user.username}</Link>}
-      </div>
-      <div className='ml-auto mr-2 space-x-2 flex flex-row'>
-        <div className='flex items-center justify-center shadow-lg p-0.5'>
-          <button className='relative h-6 aspect-square' onClick={handleChangeTheme}>
-            {themeState !== 'dark' ? <MoonIcon /> : <SunIcon />}
-          </button>
-        </div>
-        <div className='flex items-center justify-center shadow-lg p-0.5'>
-          <button className='relative h-6 aspect-video' onClick={handleChangeLanguage}>
-            {language === 'en-US' ? (
-              <Image src='/images/flag-US.webp' layout='fill' alt='flag-united-states-america' />
-            ) : (
-              <Image src='/images/flag-TR.webp' layout='fill' alt='flag-turkey' />
-            )}
-          </button>
+    <nav className={styles.navbar}>
+      <MainLogo />
+      <div className={styles.links}>{navbarLinks}</div>
+      <div className={styles.generalPreferences}>
+        <ThemeMode />
+        <Language />
+        <div className={styles.burgerMenu}>
+          <MenuIcon className='h-8' />
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
 

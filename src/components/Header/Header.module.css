@@ -1,0 +1,21 @@
+.container {
+  @apply w-full flex flex-row p-2 bg-slate-200 rounded-lg;
+}
+.userInfo {
+  @apply flex flex-col flex-1 items-center justify-center;
+}
+.title {
+  @apply text-2xl;
+}
+.description {
+  @apply text-slate-500 mb-10;
+}
+.userImage {
+  @apply w-80 aspect-square m-10;
+}
+.circle {
+  @apply w-80 h-80 absolute rounded-full border-8 border-cyan-800;
+}
+.image {
+  @apply absolute w-80 h-80;
+}

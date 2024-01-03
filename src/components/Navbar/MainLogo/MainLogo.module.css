@@ -1,0 +1,7 @@
+.logoBorder {
+  @apply flex items-center justify-center shadow-xl border border-cyan-200 w-14 aspect-square rounded-full cursor-pointer;
+}
+
+.logoTitle {
+  @apply text-slate-500 shadow-xl text-[8px] font-bold whitespace-nowrap;
+}

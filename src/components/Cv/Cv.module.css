@@ -1,0 +1,35 @@
+.container {
+  @apply flex flex-col items-center justify-center bg-white py-20 px-3 font-mono space-y-3;
+}
+
+.header_container {
+  @apply flex flex-col items-center justify-center w-full mb-3;
+}
+
+.hr {
+  @apply w-full h-[3px] fill-black mt-2 mb-1;
+}
+
+.header_title {
+  @apply text-xl text-slate-900;
+}
+
+.header_info {
+  @apply text-base text-slate-500;
+}
+
+.section_title {
+  @apply text-xl text-slate-800 w-1/4;
+}
+
+.section_content {
+  @apply text-sm text-slate-600 ml-2 w-3/4;
+}
+
+.education_container {
+  @apply flex flex-col space-y-1;
+}
+
+.education_content {
+  @apply flex flex-row justify-between;
+}

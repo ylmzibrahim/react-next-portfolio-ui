@@ -1,3 +1,95 @@
 {
-  "Home": "Ana Sayfa"
+  "navbar": {
+    "links": {
+      "home": "Ana Sayfa",
+      "projects": "Projeler",
+      "cv": "CV",
+      "contact": "İletişim"
+    }
+  },
+  "footer": {
+    "title": "Crafted with passion and precision",
+    "description": "© Tutku ve hassasiyetle tasarlanan bu web sitesi, tasarım ve teknolojinin uyumlu bir birleşimine tanıklık ederken, bir web ön uçgeliştirici ve bilgisayar mühendisi tarafından oluşturulmuş olup, dijital manzarayı bir piksel atılımıyla şekillendirmektedir."
+  },
+  "cv": {
+    "sectionTitlesEnum": {
+      "ABOUT" : "ABOUT",
+      "EDUCATION" : "EDUCATION",
+      "COMPUTER_SKILLS" : "COMPUTER SKILLS",
+      "FOREIGN_LANGUAGES" : "FOREIGN LANGUAGES",
+      "EXPERIENCES" : "EXPERIENCES",
+      "PROJECTS" : "PROJECTS",
+      "CONTACT" : "CONTACT"
+    },
+    "computerSkills": {
+      "titles": {
+        "programmingLanguages": "Programming Languages",
+        "operatingSystems": "Operating Systems",
+        "interesteds": "Interesteds"
+      },
+      "programmingLanguagesEnum": {
+        "JAVASCRIPT": "JavaScript",
+        "C": "C",
+        "C_SHARP": "C#"
+      },
+      "operatingSystemsEnum": {
+        "LINUX": "Linux",
+        "WINDOWS": "Windows",
+        "MACOS": "Mac OS"
+      },
+      "interestedsEnum": {
+        "ADOBE_PHOTOSHOP" : "Adobe Photoshop",
+        "ADOBE_PREMIERE_PRO" : "Adobe Premiere Pro",
+        "ARDUINO" : "Arduino",
+        "LATEX" : "LaTeX"
+      }
+    },
+    "foreignLanguage": {
+      "languages": "Diller",
+      "foreignLanguagesEnum": {
+        "TURKISH": "Türkçe",
+        "ENGLISH": "İngilizce",
+        "ITALIAN": "İtalyanca"
+      },
+      "foreignLanguageLevelsEnum": {
+        "A1": "Beginner",
+        "A2": "Pre-Intermediate",
+        "B1": "Intermediate",
+        "B2": "Upper-Intermediate",
+        "C1": "Advanced",
+        "C2": "Native"
+      }
+    },
+    "experiences": {
+      "current": "Güncel",
+      "jobTypesEnum":{
+        "INTERN": "Intern",
+        "FULL_TIME": "Full time",
+        "PART_TIME": "Part time",
+        "CONTRACT": "Contract",
+        "FREELANCE": "Freelance"
+      },
+      "jobPositionsEnum": {
+        "ON_SITE": "On Site",
+        "REMOTE": "Remote",
+        "HYBRID": "Hybrid"
+      }
+    }
+  },
+  "projects": {
+    "projectTypesEnum": {
+      "WEB_FRONTEND": "Web Frontend",
+      "WEB_BACKEND": "Web Backend",
+      "ROBOTIC": "Robotic"
+    }
+  },
+  "contact": {
+    "telNo": "Telefon",
+    "email": "E-mail",
+    "platformTypesEnum": {
+      "LINKEDIN": "LinkedIn",
+      "GITHUB": "GitHub",
+      "INSTAGRAM": "Instagram"
+    }
+  }
 }

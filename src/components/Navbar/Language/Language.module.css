@@ -1,0 +1,7 @@
+.container {
+  @apply flex items-center justify-center shadow-lg p-0.5;
+}
+
+.button {
+  @apply relative h-6 aspect-video;
+}

@@ -1,11 +1,11 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import React from 'react'
 
-const Register = () => {
-  return <div>Register...</div>
+const About = () => {
+  return <div>About...</div>
 }
 
-export default Register
+export default About
 
 export const getStaticProps = async ({ locale }) => ({
   props: { ...(await serverSideTranslations(locale, ['common', 'footer'])) }

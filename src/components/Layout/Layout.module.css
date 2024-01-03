@@ -1,0 +1,7 @@
+.container {
+  @apply bg-slate-50 dark:bg-slate-800 min-h-screen flex flex-col;
+}
+
+.childrenComponent {
+  @apply max-w-screen-lg w-full mx-auto p-3 z-10;
+}

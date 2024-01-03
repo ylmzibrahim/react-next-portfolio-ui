@@ -1,3 +1,19 @@
 {
-  "Home": "Home"
+  "navbar": {
+    "links": {
+      "home": "Home",
+      "projects": "Projects",
+      "cv": "CV",
+      "contact": "Contact"
+    }
+  },
+  "header": {
+    "title": "İBRAHİM YILMAZ",
+    "description": "Frontend Developer, Computer Engineer, Web Technologies",
+    "slogan": "BE GHOST, THEN START"
+  },
+  "footer": {
+    "title": "Crafted with passion and precision",
+    "description": "© Tutku ve hassasiyetle tasarlanan bu web sitesi, tasarım ve teknolojinin uyumlu bir birleşimine tanıklık ederken, bir web ön uçgeliştirici ve bilgisayar mühendisi tarafından oluşturulmuş olup, dijital manzarayı bir piksel atılımıyla şekillendirmektedir."
+  }
 }

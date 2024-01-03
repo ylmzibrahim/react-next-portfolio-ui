@@ -1,0 +1,28 @@
+.links {
+  @apply hidden md:flex justify-start items-center space-x-10 mb-1 text-sky-900 font-semibold border-t-sky-900;
+}
+
+.linkLine {
+  @apply w-full h-1.5;
+}
+
+.activeLinkLine {
+  @apply bg-sky-800 dark:bg-sky-500 rounded animate-[increaseWidth_.3s];
+}
+
+.burgerMenu {
+  @apply md:hidden;
+}
+
+.generalPreferences {
+  @apply mr-2 space-x-2 md:space-x-5 flex flex-row;
+}
+
+@keyframes increaseWidth {
+  0% {
+    @apply w-0;
+  }
+  100% {
+    @apply w-full;
+  }
+}

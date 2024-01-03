@@ -37,6 +37,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["src", "src/types/*", "src/pages"],
+  "include": ["src", "src/types/*", "src/pages", "svg.d.ts"],
   "exclude": ["node_modules", "public", "scripts"]
 }

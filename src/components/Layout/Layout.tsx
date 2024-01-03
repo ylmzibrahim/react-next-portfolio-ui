@@ -1,18 +1,17 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { selectors } from '../../store'
-import { useRouter } from 'next/router'
-import Navbar from '../Navbar/Navbar'
 import { LayoutProps } from './Layout.types'
+import Navbar from '../Navbar/Navbar'
+import styles from './Layout.module.css'
+import { Footer } from 'components/Footer/Footer'
+import { Background } from 'components/Background/Background'
 
 export const Layout = ({ children }: LayoutProps) => {
-  const isLoggedIn = useSelector(selectors.getIsLoggedIn)
-  const router = useRouter()
-
   return (
-    <div className='bg-slate-50 dark:bg-slate-800 min-h-screen flex flex-col'>
+    <div className={styles.container + ' dark:bg-slate-800'}>
       <Navbar />
-      <div className='max-w-screen-lg w-full mx-auto p-3'>{children}</div>
+      <Background />
+      <div className={styles.childrenComponent}>{children}</div>
+      <Footer />
     </div>
   )
 }

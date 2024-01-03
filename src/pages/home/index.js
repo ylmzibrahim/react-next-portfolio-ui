@@ -1,8 +1,15 @@
+import { Header } from 'components/Header/Header'
+import { Projects } from 'components/Projects/Projects'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import React from 'react'
 
 const Home = () => {
-  return <div>Home...</div>
+  return (
+    <>
+      <Header />
+      <Projects />
+    </>
+  )
 }
 
 export default Home
